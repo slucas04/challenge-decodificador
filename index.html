@@ -13,29 +13,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="popup-encrypt" class="popup"> 
+        <p class="px-class"><small class="fechar"><a class="x-class" href="javascript: fechar();">&#10006</a></small></p>
+        <p>Primeiro insira a mensagem a ser criptografada no campo de texto!</p>
+    </div>
+
+    <div id="popup-decrypt" class="popup"> 
+        <p class="px-class"><small class="fechar"><a class="x-class" href="javascript: fechar();">&#10006</a></small></p>
+        <p>Primeiro insira a mensagem a ser descriptografada no campo de texto!</p>
+    </div>
+
+    <div id="popup-acento" class="popup"> 
+        <p class="px-class"><small class="fechar"><a class="x-class" href="javascript: fechar();">&#10006</a></small></p>
+        <p>A mensagem não pode conter acentos ou letras maiúsculas!</p>
+    </div>
+
+    <div id="popup-copiar" class="popup"> 
+        <p>Texto copiado!</p>
+    </div>
+      
     <nav class="navbar">
         <div class="titulo"><h1>Decodificador de texto - ONE + Alura</h1></div>
         <ul class="nav-links">
-            <li><a href="#home">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
+            <li><a href="https://github.com/slucas04/challenge-decodificador" target="_blank">Repositório</a></li>
+            <li><a href="https://portfolio-eight-flax-49.vercel.app/" target="_blank">Sobre mim</a></li>
         </ul>
     </nav>
     <div class="main-container">
         <main>
             <div class="about">
-                <p><strong>Olá, mundo!</strong> O decodificador de texto abaixo funciona com uma lógica de criptografia criada pelo próprio challenge. Uma mensagem só pode ser passada pelo encriptador uma única vez, senão apresentará problemas para ser desencriptada! </p>
+                <p><strong>Olá, mundo!</strong> O decodificador de texto abaixo funciona com uma lógica 
+                    de criptografia criada pelo próprio challenge. Uma mensagem só pode ser passada pelo 
+                    encriptador uma única vez, senão apresentará problemas para ser desencriptada! 
+                Você pode encontrar o código-fonte desta aplicação no meu repositório do GitHub abaixo: <br><br><a style="text-decoration: none; color: rgb(255, 185, 255);" target="_blank" href="https://github.com/slucas04/challenge-decodificador">https://github.com/slucas04/challenge-decodificador</a></p>
             </div>
-            <p style="font-style: italic; font-weight: 300;">&#9888; Insira abaixo apenas letras minúsculas e sem acento.</p>
-            <input type="text" name="" id="">
-            <br>
+            <input style="margin-top: 25px;" type="text" name="" id="">
+            <p style="font-style: italic; font-weight: 300; margin-top: 0;">&#9888; Insira abaixo apenas letras minúsculas e sem acento.</p>
             <button class="button-30" id="encriptar" role="button" onclick="encriptarFrase()">Criptografar</button>
             <button class="button-30" id="desencriptar" role="button" onclick="desencriptarFrase()">Descriptografar</button>
         </main>
         <aside>
-            <h2>Mensagem:</h2>
+            <h2 style="text-align: center;">Mensagem:</h2>
             <h3>‎</h3>
             
-            <button class="button-38" role="button" onclick="copiarTexto()">Copiar texto</button>
+            <button style="text-align: center;" class="button-38" role="button" onclick="copiarTexto()">Copiar texto</button>
         </aside>
     </div>
     <script src="./script.js"></script>

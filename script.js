@@ -17,16 +17,17 @@ function encriptarPalavra(palavra){
 }
 
 function encriptarFrase(){
-    
-    const regexMaiusculo = /[A-Z]/;
-    const regexAcento = /[À-ÖØ-öø-ÿ]/;
     let mensagemRecebida = document.querySelector('input').value;
+
     if(mensagemRecebida == ''){
-        alert('Preencha o campo de texto com uma mensagem a ser criptografada!');
+        abrir('encrypt');
         return;
     }
+
+    const regexMaiusculo = /[A-Z]/;
+    const regexAcento = /[À-ÖØ-öø-ÿ]/;
     if(regexMaiusculo.test(mensagemRecebida) || regexAcento.test(mensagemRecebida)){
-        alert('A frase não pode conter acento ou letras maiúsculas.');
+        abrir('acento');
         return;
     }
 
@@ -66,9 +67,17 @@ function desencriptarPalavra(palavra){
 function desencriptarFrase(){
     let mensagemRecebida = document.querySelector('input').value;
     if(mensagemRecebida == ''){
-        alert('Preencha o campo de texto com uma mensagem a ser decodificada!');
+        abrir('decrypt');
         return;
     }
+
+    const regexMaiusculo = /[A-Z]/;
+    const regexAcento = /[À-ÖØ-öø-ÿ]/;
+    if(regexMaiusculo.test(mensagemRecebida) || regexAcento.test(mensagemRecebida)){
+        abrir('acento');
+        return;
+    }
+
     if(!(mensagemRecebida.includes('ai')) && !(mensagemRecebida.includes('enter')) && !(mensagemRecebida.includes('imes')) && !(mensagemRecebida.includes('ober')) && !(mensagemRecebida.includes('ufat'))){
         alert('A mensagem não está criptografada!');
         return;
@@ -91,12 +100,9 @@ function desencriptarFrase(){
 
 // COPIAR TEXTO
 function copiarTexto() {
-    if((document.querySelector('h3').innerHTML) == ' '){
-        alert('Não há texto para ser copiado!');
-        return;
-    }
     navigator.clipboard.writeText(document.querySelector('h3').innerHTML)
-    alert('Texto copiado com sucesso!');
+    abrir('copiar');
+    sleep(1000).then(() => { fechar(); });
 }
 
 //MOSTRAR/ESCONDER BOTÃO
@@ -105,5 +111,33 @@ function mostrarBotao() {
     let titulo = document.querySelector('h2');
     // PRECISO TENTAR ESCONDER O H2 E SO MOSTRAR NA HORA PRA FICAR MAIS BONITINHO  
     botaomostrar.style.visibility = 'visible';
+}
+
+//CONFIGURANDO POP-UP
+function fechar(){
+    document.getElementById('popup-decrypt').style.display = 'none';
+    document.getElementById('popup-encrypt').style.display = 'none';
+    document.getElementById('popup-acento').style.display = 'none';
+    document.getElementById('popup-copiar').style.display = 'none';
+  }
+
+function abrir(funcao){
+    if(funcao == 'decrypt'){
+        document.getElementById('popup-decrypt').style.display = 'block';
+    }
+    if(funcao == 'encrypt'){
+        document.getElementById('popup-encrypt').style.display = 'block';
+    }
+    if(funcao == 'acento'){
+        document.getElementById('popup-acento').style.display = 'block';
+    }
+    if(funcao == 'copiar'){
+        document.getElementById('popup-copiar').style.display = 'block';
+    }
+    
+  }
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
