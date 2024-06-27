@@ -17,13 +17,21 @@ function encriptarPalavra(palavra){
 }
 
 function encriptarFrase(){
+    
     const regexMaiusculo = /[A-Z]/;
     const regexAcento = /[À-ÖØ-öø-ÿ]/;
     let mensagemRecebida = document.querySelector('input').value;
+    if(mensagemRecebida == ''){
+        alert('Preencha o campo de texto com uma mensagem a ser criptografada!');
+        return;
+    }
     if(regexMaiusculo.test(mensagemRecebida) || regexAcento.test(mensagemRecebida)){
         alert('A frase não pode conter acento ou letras maiúsculas.');
         return;
     }
+
+    mostrarBotao();
+
     let arrayFrases = mensagemRecebida.split(' ');
     let arrayPalavrasEncriptadas = [];
     for (const palavra of arrayFrases) {
@@ -57,10 +65,17 @@ function desencriptarPalavra(palavra){
 
 function desencriptarFrase(){
     let mensagemRecebida = document.querySelector('input').value;
+    if(mensagemRecebida == ''){
+        alert('Preencha o campo de texto com uma mensagem a ser decodificada!');
+        return;
+    }
     if(!(mensagemRecebida.includes('ai')) && !(mensagemRecebida.includes('enter')) && !(mensagemRecebida.includes('imes')) && !(mensagemRecebida.includes('ober')) && !(mensagemRecebida.includes('ufat'))){
         alert('A mensagem não está criptografada!');
         return;
     }
+
+    mostrarBotao();
+
     let arrayFrases = mensagemRecebida.split(' ');
     let arrayPalavrasEncriptadas = [];
     for (const palavra of arrayFrases) {
@@ -82,5 +97,13 @@ function copiarTexto() {
     }
     navigator.clipboard.writeText(document.querySelector('h3').innerHTML)
     alert('Texto copiado com sucesso!');
+}
+
+//MOSTRAR/ESCONDER BOTÃO
+function mostrarBotao() {
+    let botaomostrar = document.querySelector('button.button-38');
+    let titulo = document.querySelector('h2');
+    // PRECISO TENTAR ESCONDER O H2 E SO MOSTRAR NA HORA PRA FICAR MAIS BONITINHO  
+    botaomostrar.style.visibility = 'visible';
 }
 

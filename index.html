@@ -5,29 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challegen - Encriptação de texto</title>
     <link rel="stylesheet" href="./style.css">
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <h1>Encriptador de mensagens</h1>
-            <ul>
-                <li>Home</li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="navbar">
+        <div class="titulo"><h1>Decodificador de texto - ONE + Alura</h1></div>
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre</a></li>
+        </ul>
+    </nav>
     <div class="main-container">
         <main>
+            <div class="about">
+                <p><strong>Olá, mundo!</strong> O decodificador de texto abaixo funciona com uma lógica de criptografia criada pelo próprio challenge. Uma mensagem só pode ser passada pelo encriptador uma única vez, senão apresentará problemas para ser desencriptada! </p>
+            </div>
+            <p style="font-style: italic; font-weight: 300;">&#9888; Insira abaixo apenas letras minúsculas e sem acento.</p>
             <input type="text" name="" id="">
             <br>
-            <button onclick="encriptarFrase()">Encriptar</button>
-            <button onclick="desencriptarFrase()">Desencriptar</button>
+            <button class="button-30" id="encriptar" role="button" onclick="encriptarFrase()">Criptografar</button>
+            <button class="button-30" id="desencriptar" role="button" onclick="desencriptarFrase()">Descriptografar</button>
         </main>
         <aside>
             <h2>Mensagem:</h2>
-            <h3> </h3>
-            <p>(!) Apenas letras minúsculas e sem acento.</p>
-            <p>(!) Uma mensagem só pode ser passada pelo encriptador uma única vez, senão apresentará problemas para ser desencriptada!</p>
-            <button onclick="copiarTexto()">Copiar Texto</button>
+            <h3>‎</h3>
+            
+            <button class="button-38" role="button" onclick="copiarTexto()">Copiar texto</button>
         </aside>
     </div>
     <script src="./script.js"></script>
