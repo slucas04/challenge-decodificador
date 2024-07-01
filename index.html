@@ -47,13 +47,14 @@
                     encriptador uma única vez, senão apresentará problemas para ser desencriptada! 
                 Você pode encontrar o código-fonte desta aplicação no meu repositório do GitHub abaixo: <br><br><a style="text-decoration: none; color: rgb(255, 185, 255);" target="_blank" href="https://github.com/slucas04/challenge-decodificador">https://github.com/slucas04/challenge-decodificador</a></p>
             </div>
-            <input style="margin-top: 25px;" type="text" name="" id="">
+            <input placeholder="Digite o texto a ser criptografado..." style="margin-top: 25px;" type="text" name="" oninput="encriptarFrase()" id="criptografarInput">
+            <input placeholder="Digite o texto a ser descriptografado..." style="margin-top: 25px; display: none;" type="text" name="" oninput="desencriptarFrase()" id="descriptografarInput">
             <p style="font-style: italic; font-weight: 300; margin-top: 0;">&#9888; Insira abaixo apenas letras minúsculas e sem acento.</p>
-            <button class="button-30" id="encriptar" role="button" onclick="encriptarFrase()">Criptografar</button>
-            <button class="button-30" id="desencriptar" role="button" onclick="desencriptarFrase()">Descriptografar</button>
+            <button class="button-30" id="encriptar" role="button" onclick="botaoCriptografar()">Criptografar</button>
+            <button class="button-30" id="desencriptar" role="button" onclick="botaoDescriptografar()">Descriptografar</button>
         </main>
         <aside>
-            <h2 style="text-align: center;">Mensagem:</h2>
+            <h2 id="mensagemlabel" style="text-align: center;">Mensagem encriptada:</h2>
             <h3>‎</h3>
             
             <button style="text-align: center;" class="button-38" role="button" onclick="copiarTexto()">Copiar texto</button>

@@ -20,7 +20,8 @@ function encriptarFrase(){
     let mensagemRecebida = document.querySelector('input').value;
 
     if(mensagemRecebida == ''){
-        abrir('encrypt');
+        document.querySelector('button.button-38').style.visibility = 'hidden';
+        document.querySelector('h3').innerHTML = '';
         return;
     }
 
@@ -65,9 +66,10 @@ function desencriptarPalavra(palavra){
 }
 
 function desencriptarFrase(){
-    let mensagemRecebida = document.querySelector('input').value;
+    let mensagemRecebida = document.getElementById('descriptografarInput').value;
     if(mensagemRecebida == ''){
-        abrir('decrypt');
+        document.querySelector('button.button-38').style.visibility = 'hidden';
+        document.querySelector('h3').innerHTML = '';
         return;
     }
 
@@ -78,10 +80,10 @@ function desencriptarFrase(){
         return;
     }
 
-    if(!(mensagemRecebida.includes('ai')) && !(mensagemRecebida.includes('enter')) && !(mensagemRecebida.includes('imes')) && !(mensagemRecebida.includes('ober')) && !(mensagemRecebida.includes('ufat'))){
-        alert('A mensagem não está criptografada!');
-        return;
-    }
+    //if(!(mensagemRecebida.includes('ai')) && !(mensagemRecebida.includes('enter')) && !(mensagemRecebida.includes('imes')) && !(mensagemRecebida.includes('ober')) && !(mensagemRecebida.includes('ufat'))){
+    //    alert('A mensagem não está criptografada!');
+    //    return;
+    //}
 
     mostrarBotao();
 
@@ -109,7 +111,6 @@ function copiarTexto() {
 function mostrarBotao() {
     let botaomostrar = document.querySelector('button.button-38');
     let titulo = document.querySelector('h2');
-    // PRECISO TENTAR ESCONDER O H2 E SO MOSTRAR NA HORA PRA FICAR MAIS BONITINHO  
     botaomostrar.style.visibility = 'visible';
 }
 
@@ -139,5 +140,23 @@ function abrir(funcao){
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function botaoCriptografar() {
+    document.getElementById('criptografarInput').value = '';
+    document.querySelector('h3').innerHTML = '';
+    mensagemlabel.innerHTML = 'Mensagem criptografada:';
+    document.getElementById('criptografarInput').style.display = 'block';
+    document.getElementById('descriptografarInput').style.display = 'none';
+}
+
+function botaoDescriptografar() {
+    document.getElementById('descriptografarInput').value = '';
+    document.querySelector('h3').innerHTML = '';
+    mensagemlabel.innerHTML = 'Mensagem descriptografada:';
+    document.getElementById('criptografarInput').style.display = 'none';
+    document.getElementById('descriptografarInput').style.display = 'block';
+    
+
 }
 
