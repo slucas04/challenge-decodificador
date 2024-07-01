@@ -241,6 +241,9 @@ body {
 }   
 
 .main-container aside {
+    display: flex;
+    flex-direction: column; /* Ajusta os elementos para coluna */
+    align-items: flex-start; /* Alinha os elementos à esquerda */
     word-break: break-word;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
