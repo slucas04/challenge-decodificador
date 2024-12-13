@@ -1,3 +1,14 @@
+<div align="center">
+  <a href="https://www.oracle.com/br/education/oracle-next-education/">
+    <img src="https://img.shields.io/badge/challenge-oracle%20next%20education-blue" alt="Challenge Oracle Next Education">
+  </a>
+</div>
+<div align="center">
+    <img src="https://img.shields.io/badge/finished-june-green" alt="Finished in June">
+</div>
+
+---
+
 # Decodificador de Texto
 
 Este é um projeto desenvolvido como parte do challenge do Oracle Next Education, uma parceria entre a Alura e a Oracle para formação de backend em Java com foco em inteligência artificial. O desafio inicial utiliza lógica de programação em JavaScript e desenvolvimento web.
