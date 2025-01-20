@@ -13,7 +13,9 @@
 
 Este é um projeto desenvolvido como parte do challenge do Oracle Next Education, uma parceria entre a Alura e a Oracle para formação de backend em Java com foco em inteligência artificial. O desafio inicial utiliza lógica de programação em JavaScript e desenvolvimento web.0
 
-<img width="718" alt="decodificador" src="https://github.com/user-attachments/assets/e0096b1a-fa7e-4c04-852f-a4911bdfe4b6" />
+<div align="center">
+  <img width="718" alt="decodificador" src="https://github.com/user-attachments/assets/e0096b1a-fa7e-4c04-852f-a4911bdfe4b6" />
+</div>
 
 
 ## 🔍 Sobre o Projeto
